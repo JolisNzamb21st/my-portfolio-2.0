@@ -1,3 +1,9 @@
+/* =====================================================
+   My Portfolio 2.0 - Base Setup (Version 1.0)
+   Author: Jolis Nzambimana
+   Description: Global reset, design tokens, and base setup
+===================================================== */
+
 /* =========== Reset & Box Sizing =========== */
 *,
 *::before,
@@ -8,7 +14,7 @@
 }
 
 /* =========== Design Tokens (CSS variables) =========== */
-:root{
+:root {
   /* Colors */
   --bg: #ffffff;
   --text: #111827;
@@ -24,14 +30,18 @@
   --space-xl: 40px;
 
   /* Typography */
-  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-sans: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   --fs-base: 1rem; /* 16px */
   --line-height: 1.6;
   --max-width: 1100px;
 }
 
 /* =========== Base styles =========== */
-html { font-size: 16px; scroll-behavior: smooth; }
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-sans);
   color: var(--text);
@@ -40,12 +50,162 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-img { max-width: 100%; display: block; height: auto; }
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
 .container {
   width: 90%;
   max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
 }
-a { color: var(--primary); text-decoration: none; }
-button { font: inherit; }
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+/* =====================================================
+   NAVBAR (Portfolio 2.0)
+   Combines professional layout + clean readability
+===================================================== */
+
+.navbar {
+  background: var(--bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: var(--space-sm) 0;
+}
+/* Layout: two main sides */
+.nav-container {
+  display: flex;
+  flex-direction: column; /* stack vertically on mobile */
+  align-items: flex-start;
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+/* ---------- Left Section ---------- */
+.navbar-left {
+  width: 100%;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-top: var(--space-sm);
+}
+
+.contact-info a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s ease;
+}
+.contact-info a:hover {
+  color: var(--primary);
+}
+/* ---------- Right Section ---------- */
+.navbar-right {
+  width: 100%;
+  margin-top: var(--space-sm);
+}
+
+.nav-links {
+  display: none; /* hidden until toggled */
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
+  background: var(--bg);
+  border-top: 1px solid #e5e7eb;
+  padding-top: var(--space-sm);
+}
+.nav-links.active {
+  display: flex;
+}
+
+.nav-links a {
+  color: var(--text);
+  font-weight: 500;
+  transition: color 0.3s ease;
+  text-align: left;
+  padding: var(--space-xs) 0;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.menu-icon {
+  display: block;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text);
+  margin-top: var(--space-xs);
+}
+/* =====================================================
+   DESKTOP ENHANCEMENTS — larger screens
+===================================================== */
+@media (min-width: 768px) {
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+ .navbar-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: var(--max-width);
+}
+  .contact-info {
+    flex-direction: row;
+    gap: var(--space-md);
+    margin-top: 0;
+  }
+
+  .menu-icon {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: var(--space-lg);
+    border-top: none;
+    background: none;
+    padding: 0;
+  }
+  .nav-links li{
+    list-style: none;
+  }
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    margin-top: 0;
+  }
+}
