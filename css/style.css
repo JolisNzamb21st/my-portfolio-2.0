@@ -209,3 +209,137 @@ button {
     margin-top: 0;
   }
 }
+/* === ABOUT SECTION === */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-xl) var(--space-md);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  text-align: center;
+}
+
+/* Profile Part */
+.profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-md);
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-accent);
+}
+
+.location {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* Social links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.social-links a {
+  color: var(--color-accent);
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+}
+
+/* CTA button */
+.cta-btn {
+  background-color: var(--color-accent);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: var(--space-md);
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: var(--color-accent-dark);
+}
+
+.name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: var(--space-sm);
+}
+
+.role {
+  font-size: 1rem;
+  color: var(--color-muted);
+}
+
+/* Intro text */
+.intro {
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
+  margin-top: var(--space-md);
+}
+
+/* ===== Laptop Layout (min-width: 768px) ===== */
+@media (min-width: 768px) {
+  .about {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-lg); /* reduced gap */
+    padding: var(--space-2xl) var(--space-lg);
+    text-align: left;
+  }
+
+  .profile {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .intro {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertically center content */
+    align-items: flex-start; /* left align text naturally */
+    max-width: 550px;
+    margin-right: var(--space-xl); /* add breathing room from right edge */
+  }
+
+  .intro .name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+  }
+
+  .intro .role {
+    font-size: 1.1rem;
+    color: var(--muted);
+    margin-bottom: var(--space-md);
+  }
+
+  .intro p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+}
