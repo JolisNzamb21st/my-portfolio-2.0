@@ -400,3 +400,111 @@ button {
   border-radius: 6px;
   transition: width 0.6s ease;
 }
+/* ========== Skills Section: Desktop Layout ========== */
+@media (min-width: 768px) {
+  .skills-section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: var(--space-lg); /* space between columns */
+    align-items: start;
+  }
+
+  .skills-group {
+    margin-bottom: 0; /* Remove extra bottom spacing for desktop */
+  }
+}
+/* =======================
+   Projects Section
+======================= */
+.projects-section {
+  padding: var(--space-xl) 0;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+/* ===== Project Card ===== */
+.project-card {
+  background: #fff;
+  padding: var(--space-lg);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.project-img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.project-title {
+  font-size: 1.3rem;
+  color: var(--text);
+}
+
+.project-desc {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-tags span {
+  background: var(--accent);
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  border-radius: 20px;
+}
+
+/* Buttons */
+.project-links {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.btn {
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn.secondary {
+  background: #e5e7eb;
+  color: var(--text);
+}
+/* Desktop layout */
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
