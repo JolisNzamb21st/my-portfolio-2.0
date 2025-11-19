@@ -3,6 +3,8 @@
    Author: Jolis Nzambimana
    Description: Global reset, design tokens, and base setup
 ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700&display=swap');
 
 /* =========== Reset & Box Sizing =========== */
 *,
@@ -30,16 +32,18 @@
   --space-xl: 40px;
 
   /* Typography */
-  --font-sans: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+ /* --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; */
+ --font-logo: "Bodoni Moda", serif;
+  --font-sans: "Inter", sans-serif;
   --fs-base: 1rem; /* 16px */
   --line-height: 1.6;
   --max-width: 1100px;
-  --font-nav: "Sora", sans-serif;
+ 
 }
 
 /* =========== Base styles =========== */
 html {
-  font-size: 16px;
+  font-size: 15px;
   scroll-behavior: smooth;
 }
 
@@ -102,8 +106,10 @@ button {
 }
 
 .logo {
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-family: var(--font-logo);
+  font-weight: 600;
+  font-size: 1.35rem;
+  letter-spacing: 0.5px;
   color: var(--text);
 }
 
@@ -119,6 +125,7 @@ button {
 }
 
 .contact-info a {
+  font-family: var(--font-nav);
   color: var(--muted);
   font-size: 0.9rem;
   display: flex;
@@ -149,18 +156,22 @@ button {
 }
 
 .nav-links a {
+  font-family: "Commissioner", sans-serif;
+  font-weight: 300;
+  letter-spacing: 1.5px;
   color: var(--text);
-  font-weight: 500;
   transition: color 0.3s ease;
   text-align: left;
   padding: var(--space-xs) 0;
 }
 
 .nav-links a:hover {
-  color: var(--primary);
+  font-weight:500;
+  text-decoration: underline;
 }
 
 .menu-icon {
+  font-family: var(--font-nav);
   display: block;
   font-size: 1.5rem;
   cursor: pointer;
@@ -176,10 +187,10 @@ button {
     justify-content: space-between;
     align-items: center;
   }
-  
-  .navbar a, .logo {
-  font-family: var(--font-nav);
-}
+
+ html {
+    font-size: 17px;
+  }
  .navbar-left {
   display: flex;
   flex-direction: column;
@@ -188,7 +199,7 @@ button {
 }
   .contact-info {
     flex-direction: row;
-    gap: var(--space-md);
+    gap: 0px;
     margin-top: 0;
   }
 
@@ -197,6 +208,7 @@ button {
   }
 
   .nav-links {
+    font-family: var(--font-nav);
     display: flex;
     flex-direction: row;
     gap: var(--space-lg);
